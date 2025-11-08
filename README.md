@@ -24,7 +24,7 @@
     </td>
     <td>
       <p></p>
-      <p><span style="color:#ff7f00;"><strong>1️ Colectarea datelor:</strong></span> Alegem un dataset popular cu cât mai multe imagini (ex. Kermany2018 și Srinivasan2014), clasele vizate fiind AMD (CNV + DRUSEN) și NORMAL.</p> <br> <br>
+      <p><span style="color:#ff7f00;"><strong>1️. Colectarea datelor:</strong></span> Alegem un dataset popular cu cât mai multe imagini (ex. Kermany2018 și Srinivasan2014), clasele vizate fiind AMD (CNV + DRUSEN) și NORMAL.</p> <br> <br>
       <p><span style="color:#ff7f00;"><strong>2️. Preprocesarea imaginilor:</strong></span> Redimensionare, conversie RGB/grayscale, normalizare pixeli (0–1), eliminare zgomot și augmentare (rotații, flip, shift).</p> <br> <br>
       <p><span style="color:#ff7f00;"><strong>3️. Procesarea / Modelul CNN:</strong></span> Extracția caracteristicilor cu CNN și clasificare AMD / NORMAL.</p> <br> <br>
       <p><span style="color:#ff7f00;"><strong>4️. Antrenare și validare:</strong></span> Împărțire Train/Validation/Test, monitorizare metrici (Accuracy, Loss)</p> <br> <br>
