@@ -1,6 +1,6 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/BzgEFjMi)
 
-# Clasificare amd (Degenerescenta maculara legata de varsta)
+# Clasificare AMD (Degenerescența maculară legată de vârstă)
 
 
 ## Articole
@@ -13,6 +13,28 @@
 | 4   | Robbie Holland, Thomas R. P. Taylor, Christopher Holmes, Sophie Riedl, Julia Mai,..., 2025| Specialized curricula for training vision-language models in retinal image analysis| 	Artificial Intelligence, Retinal image analysis| Encoder vizual: bazat pe ResNet‑50, pre‑antrenat prin învăţare contrastivă (BYOL) pe imagini OCT, Llama 3 de la Meta, Vision-language models| Un model vizual‑lingvistic specializat (VLM) numit RetinaVLM, capabil să interpreteze imagini OCT retiniene şi să genereze rapoarte textuale pentru managementul AMD| 63-67%| Nu există cod, rezultate decente| Interesantă ideea, https://arxiv.org/abs/2209.12468|
 | 5   | M Elsharkawy, A Sharafeldeen, F Khalifa, A Soliman, A Elnakib, M Ghazal, A Sewelam, A Thanos, H S Sandhu, A El-Baz, 2024| A Clinically Explainable AI-Based Grading System for Age-Related Macular Degeneration Using Optical Coherence Tomography| Biomedical and health informatics, Foundation Model| Backbone pre‑antrenat, strategie de thresholding, segmentare| Dezvoltă un model de tip foundation model cu estimare a incertitudinii (FMUE) pentru diagnosticul bolilor retiniene din imagini Optical Coherence Tomography (OCT)| 95.74%, cu strategia de thresholding, performanţa a crescut la ~97.44%| Poate necesita validare suplimentară pe populaţii diversificate şi aparate OCT diferite| Fiabilitatea modelului depinde de calitatea imaginilor, https://ieeexplore.ieee.org/document/10402009|
 | 6   | Reza Rasti, Member, IEEE; Armin Biglari; Mohammad Rezapourian; Ziyun Yang; and Sina Farsiu, Fellow, IEEE, 2023| RetiFluidNet: A Self-Adaptive and Multi-Attention Deep Convolutional Network for Retinal OCT Fluid Segmentation| Transactions on medical imaging, Medical image segmentation, fluid segmentation| CNN, scheme de multi‑scale deep self‑supervision learning (DSL), conexiuni skip multiple bazate pe atenţie| Scopul este de a detecta şi segmenta acumulările de lichid / fluide, care sunt semne importante în afecţiuni| Arhitectura RetiFluidNet oferă performanțe superioare, 93.6%| Modelul a fost testat pe un singur tip de aparat OCT| Complexitate ridicată a arhitecturii|
+
+
+## Schema și etapele proiectului
+
+<table>
+  <tr>
+    <td>
+      <img src="images/PI.jpg" alt="Workflow proiect OCT" width="400">
+    </td>
+    <td>
+      <p></p>
+      <p><span style="color:#ff7f00;"><strong>1️ Colectarea datelor:</strong></span> Alegem un dataset popular cu cât mai multe imagini (ex. Kermany2018 și Srinivasan2014), clasele vizate fiind AMD (CNV + DRUSEN) și NORMAL.</p> <br> <br>
+      <p><span style="color:#ff7f00;"><strong>2️. Preprocesarea imaginilor:</strong></span> Redimensionare, conversie RGB/grayscale, normalizare pixeli (0–1), eliminare zgomot și augmentare (rotații, flip, shift).</p> <br> <br>
+      <p><span style="color:#ff7f00;"><strong>3️. Procesarea / Modelul CNN:</strong></span> Extracția caracteristicilor cu CNN și clasificare AMD / NORMAL.</p> <br> <br>
+      <p><span style="color:#ff7f00;"><strong>4️. Antrenare și validare:</strong></span> Împărțire Train/Validation/Test, monitorizare metrici (Accuracy, Loss)</p> <br> <br>
+      <p><span style="color:#ff7f00;"><strong>5️. Testare pe date noi:</strong></span> Evaluare pe seturi noi, predicții simplificate și calcul acuratețe pe fiecare clasă.</p> <br> <br>
+      <p><span style="color:#ff7f00;"><strong>6️. Analiză rezultate:</strong> </span>Grafice Accuracy/Loss și export rezultate în CSV.</p> <br> <br>
+      <p><span style="color:#ff7f00;"><strong>7️. Segmentare (opțional):</strong></span> Segmentarea drusen și CNV / RPE layer pentru interpretabilitate și îmbunătățirea performanței.</p> 
+    </td>
+  </tr>
+</table>
+
 
 
 
