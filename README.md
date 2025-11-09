@@ -30,7 +30,6 @@
       <p><span style="color:#ff7f00;"><strong>4️. Antrenare și validare:</strong></span> Împărțire Train/Validation/Test, monitorizare metrici (Accuracy, Loss)</p> <br> 
       <p><span style="color:#ff7f00;"><strong>5️. Testare pe date noi:</strong></span> Evaluare pe seturi noi, predicții simplificate și calcul acuratețe pe fiecare clasă.</p> <br> 
       <p><span style="color:#ff7f00;"><strong>6️. Analiză rezultate:</strong> </span>Grafice Accuracy/Loss și export rezultate în CSV.</p> <br> 
-      <p><span style="color:#ff7f00;"><strong>7️. Segmentare (opțional):</strong></span> Segmentarea drusen și CNV / RPE layer pentru interpretabilitate și îmbunătățirea performanței.</p>  <br> 
     </td>
   </tr>
 </table>
