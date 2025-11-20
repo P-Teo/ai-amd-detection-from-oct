@@ -20,16 +20,16 @@
 <table>
   <tr>
     <td>
-      <img src="images/PI.jpg" alt="Workflow proiect OCT" width="400">
+      <img src="images/PI.png" alt="Workflow proiect OCT" width="400">
     </td>
     <td>
       <p></p> <br> 
-      <p><span style="color:#ff7f00;"><strong>1️. Colectarea datelor:</strong></span> Alegem un dataset popular cu cât mai multe imagini (ex. Kermany2018 și Srinivasan2014), clasele vizate fiind AMD (CNV + DRUSEN) și NORMAL.</p> <br> 
+      <p><span style="color:#ff7f00;"><strong>1️. Colectarea datelor:</strong></span> Alegem un dataset popular cu cât mai multe imagini (ex. Kermany2018 și Srinivasan2014). Folosim un dataset cu imagini OCT în 3 foldere: train, val, test.​</p> <br> 
       <p><span style="color:#ff7f00;"><strong>2️. Preprocesarea imaginilor:</strong></span> Redimensionare, conversie RGB/grayscale, normalizare pixeli (0–1), eliminare zgomot și augmentare (rotații, flip, shift).</p> <br> 
-      <p><span style="color:#ff7f00;"><strong>3️. Procesarea / Modelul CNN:</strong></span> Extracția caracteristicilor cu CNN și clasificare AMD / NORMAL.</p> <br> 
-      <p><span style="color:#ff7f00;"><strong>4️. Antrenare și validare:</strong></span> Împărțire Train/Validation/Test, monitorizare metrici (Accuracy, Loss)</p> <br> 
-      <p><span style="color:#ff7f00;"><strong>5️. Testare pe date noi:</strong></span> Evaluare pe seturi noi, predicții simplificate și calcul acuratețe pe fiecare clasă.</p> <br> 
-      <p><span style="color:#ff7f00;"><strong>6️. Analiză rezultate:</strong> </span>Grafice Accuracy/Loss și export rezultate în CSV.</p> <br> 
+      <p><span style="color:#ff7f00;"><strong>3️. Definire Model CNN (MobileNetV2):</strong></span> Definim modelul MobileNetV2 ca bază și adăugăm un strat final de clasificarea a celor 3 clase. Modelul este folosit ca extractor de caracteristici.​</p> <br> 
+      <p><span style="color:#ff7f00;"><strong>4️. Compilare și antrenare model:</strong></span> Antrenăm modelul pe datele din train pentru 10 epoci. La sfârșitul fiecărei epoci se evaluează val și se raportează loss/accuracy pentru antrenare și validare.​</p> <br> 
+      <p><span style="color:#ff7f00;"><strong>5️. Testare:</strong></span> Testăm modelul pe setul de date din test și pe încă un set de date + calcul acuratețe pe fiecare clasă.</p> <br> 
+      <p><span style="color:#ff7f00;"><strong>6️. Analiză rezultate:</strong> </span>Grafice Accuracy/Loss și obținem precizia, sensibilitatea, scorul F1 și matricea de confuzie​</p> <br> 
     </td>
   </tr>
 </table>
