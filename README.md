@@ -54,7 +54,9 @@ Am antrenat mai întâi un model de segmentare (U-Net) pe un dataset extern cu m
 
 
 ### 💻 Faza 3 - Interfață Streamlit pentru analiza OCT
-Am creat o interfață interactivă cu **Streamlit** care permite rularea rapidă a fluxurilor de segmentare și clasificare pe imaginile OCT, pentru a verifica ușor performanța modelelor și a vizualiza rezultatele. 
+
+Am creat o interfață interactivă cu **Streamlit** care permite rularea rapidă a fluxurilor de segmentare și clasificare pe imaginile OCT, pentru a verifica ușor performanța modelelor și a vizualiza rezultatele.
+
 ---
 
 ## 🧪 Faza 1 – Clasificare fără segmentare
