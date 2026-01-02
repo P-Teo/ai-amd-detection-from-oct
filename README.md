@@ -220,7 +220,7 @@ După clasificarea fără segmentare, proiectul a fost extins prin introducerea 
 
 ---
 
-## 💻 Interfață Streamlit pentru analiza OCT
+## 💻 Faza 3 – Interfață Streamlit pentru analiza OCT
 
 Am creat o interfață interactivă cu **Streamlit** care permite rularea rapidă a fluxurilor de segmentare și clasificare pe imaginile OCT, pentru a verifica ușor performanța modelelor și a vizualiza rezultatele.  
 
