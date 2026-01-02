@@ -28,6 +28,10 @@ Acest proiect investighează clasificarea imaginilor OCT pentru **Degenerescenț
 
 ## 🔁 Fluxul proiectului
 
+<img width="3240" height="1630" alt="image" src="https://github.com/user-attachments/assets/92389eb9-7fa8-4e9a-b769-ddbf516dc06d" />
+
+
+
 ### 🧪 Faza 1 – Clasificare fără segmentare
 1. **T1** – Testarea unui model CNN existent  
    https://github.com/ACM-Research/image-classification-cnn/blob/master/OCT-cnn/python_model/variables/model.h5
@@ -260,25 +264,25 @@ Am creat o interfață interactivă cu **Streamlit** care permite rularea rapid�
 | 6   | Reza Rasti, Member, IEEE; Armin Biglari; Mohammad Rezapourian; Ziyun Yang; and Sina Farsiu, Fellow, IEEE, 2023| RetiFluidNet: A Self-Adaptive and Multi-Attention Deep Convolutional Network for Retinal OCT Fluid Segmentation| Transactions on medical imaging, Medical image segmentation, fluid segmentation| CNN, scheme de multi‑scale deep self‑supervision learning (DSL), conexiuni skip multiple bazate pe atenţie| Scopul este de a detecta şi segmenta acumulările de lichid / fluide, care sunt semne importante în afecţiuni| Arhitectura RetiFluidNet oferă performanțe superioare, 93.6%| Modelul a fost testat pe un singur tip de aparat OCT| Complexitate ridicată a arhitecturii https://arxiv.org/abs/2209.12468|
 
 
-## Schema și etapele proiectului
+## 📚 Bibliografie
 
-<table>
-  <tr>
-    <td>
-      <img src="images/PI.png" alt="Workflow proiect OCT" width="400">
-    </td>
-    <td>
-      <p></p> <br> 
-      <p><span style="color:#ff7f00;"><strong>1️. Colectarea datelor:</strong></span> Alegem un dataset popular cu cât mai multe imagini (ex. Kermany2018 și Srinivasan2014). Folosim un dataset cu imagini OCT în 3 foldere: train, val, test.​</p> <br> 
-      <p><span style="color:#ff7f00;"><strong>2️. Preprocesarea imaginilor:</strong></span> Redimensionare, conversie RGB/grayscale, normalizare pixeli (0–1), eliminare zgomot și augmentare (rotații, flip, shift).</p> <br> 
-      <p><span style="color:#ff7f00;"><strong>3️. Definire Model CNN (MobileNetV2):</strong></span> Definim modelul MobileNetV2 ca bază și adăugăm un strat final de clasificarea a celor 3 clase. Modelul este folosit ca extractor de caracteristici.​</p> <br> 
-      <p><span style="color:#ff7f00;"><strong>4️. Compilare și antrenare model:</strong></span> Antrenăm modelul pe datele din train pentru 10 epoci. La sfârșitul fiecărei epoci se evaluează val și se raportează loss/accuracy pentru antrenare și validare.​</p> <br> 
-      <p><span style="color:#ff7f00;"><strong>5️. Testare:</strong></span> Testăm modelul pe setul de date din test și pe încă un set de date + calcul acuratețe pe fiecare clasă.</p> <br> 
-      <p><span style="color:#ff7f00;"><strong>6️. Analiză rezultate:</strong> </span>Grafice Accuracy/Loss și obținem precizia, sensibilitatea, scorul F1 și matricea de confuzie​</p> <br> 
-    </td>
-  </tr>
-</table>
+### Dataset-uri utilizate
+- Kermany OCT 2018 Dataset – [Kaggle](https://www.kaggle.com/datasets/paultimothymooney/kermany2018)  
+- NEH UT OCT Dataset – [Kaggle](https://www.kaggle.com/datasets/orvile/neh-ut-oct-dataset)  
+- OIMHS Dataset pentru segmentare – [Springer Nature Figshare](https://springernature.figshare.com/articles/dataset/OIMHS_dataset/23508453)
 
+### Resurse AI și modele pre-antrenate
+- **MobileNetV2** – TensorFlow / Keras, ImageNet weights  
+- **ResNet18** – PyTorch, ImageNet weights  
+- **U-Net** – PyTorch, arhitectură segmentare semantică
+- diverse tool-uri AI
 
+### Articole și referințe de inspirație
+- Articole privind clasificarea AMD folosind CNN și segmentarea OCT  
+- Documentații oficiale TensorFlow și PyTorch pentru preprocesare și antrenarea modelelor
+
+### Alte resurse utile
+- Documentații Streamlit pentru interfața interactivă  
+- Coduri și exemple de procesare imagini medicale și vizualizare rezultate
 
 
