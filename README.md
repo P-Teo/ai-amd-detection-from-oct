@@ -43,6 +43,7 @@ Acest proiect investighează clasificarea imaginilor OCT pentru **Degenerescenț
      
 ### 🧩 Faza 2 – Clasificare cu segmentare explicită
 În cadrul proiectului, am testat trei abordări de segmentare pentru a îmbunătăți clasificarea AMD:
+
 Tip 1 – Segmentare custom (V1)
 Am realizat o procesare inițială a imaginilor pentru segmentarea straturilor retiniene folosind intensitatea pixelilor și filtrări simple, generând măști color. Pe aceste măști am antrenat ulterior un model de clasificare pentru a evalua performanța.
 
