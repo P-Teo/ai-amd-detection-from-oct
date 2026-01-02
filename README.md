@@ -39,9 +39,22 @@ Acest proiect investighează clasificarea imaginilor OCT pentru **Degenerescenț
    - acuratețe globală
    - performanță pe clasă
    - capacitate de generalizare
-   - 
-### 🧩 Faza 2 – Clasificare cu segmentare explicită
 
+     
+### 🧩 Faza 2 – Clasificare cu segmentare explicită
+În cadrul proiectului, am testat trei abordări de segmentare pentru a îmbunătăți clasificarea AMD:
+Tip 1 – Segmentare custom (V1)
+Am realizat o procesare inițială a imaginilor pentru segmentarea straturilor retiniene folosind intensitatea pixelilor și filtrări simple, generând măști color. Pe aceste măști am antrenat ulterior un model de clasificare pentru a evalua performanța.
+
+ Tip 2 – Segmentare custom (V2 – îmbunătățită)
+Am extins procesarea din V1 cu corectări suplimentare și umpleri inteligente între straturi, obținând măști mai curate și consistente. Modelul de clasificare a fost antrenat pe aceste măști pentru a compara îmbunătățirea performanței față de V1.
+
+Tip 3 – Segmentare automată + clasificare (OIMHS)
+Am antrenat mai întâi un model de segmentare (U-Net) pe un dataset extern cu măști manuale (https://springernature.figshare.com/articles/dataset/OIMHS_dataset/23508453?file=42522673). Apoi, acest model a fost folosit pentru a genera măști pe propriul nostru dataset. În final, am antrenat modelul de clasificare pe imaginile segmentate automat pentru validarea performanței pe clasele CNV, DRUSEN și NORMAL.
+
+
+### 💻 Faza 3 - Interfață Streamlit pentru analiza OCT
+Am creat o interfață interactivă cu **Streamlit** care permite rularea rapidă a fluxurilor de segmentare și clasificare pe imaginile OCT, pentru a verifica ușor performanța modelelor și a vizualiza rezultatele. 
 ---
 
 ## 🧪 Faza 1 – Clasificare fără segmentare
@@ -75,6 +88,12 @@ Acest proiect investighează clasificarea imaginilor OCT pentru **Degenerescenț
 | ResNet18 | ~98.7% | 100% | 96% | 100% |
 | Model GitHub | ~97.66% | 97% | 95% | 99% |
 
+| MobileNetV2 | ResNet18 |
+|-------------|----------|
+| <img width="320" src="https://github.com/user-attachments/assets/91c08296-59e8-455c-aba0-3b5b4858d1ae" /> | <img width="320" src="https://github.com/user-attachments/assets/8ce73d49-c840-4bf8-9334-0df161ee51b7" /> |
+
+
+
 ---
 
 ### 🔸 Dataset extern
@@ -84,6 +103,11 @@ Acest proiect investighează clasificarea imaginilor OCT pentru **Degenerescenț
 | MobileNetV2 | ~58.46% | 76% | 11% | 96% |
 | ResNet18 | ~74.06% | 93% | 45% | 96% |
 | Model GitHub | ~43% | - | - | - |
+
+| MobileNetV2 | ResNet18 |
+|-------------|----------|
+| <img width="320" height="220" alt="MobileNetV2" src="https://github.com/user-attachments/assets/bbf689a6-c9af-4b85-a15f-189d447147a8" /> | <img width="320" height="220" alt="ResNet18" src="https://github.com/user-attachments/assets/41cf658d-bfbf-4ad1-91cd-71e1b99bcc94" /> |
+
 
 ---
 
@@ -102,6 +126,15 @@ Acest proiect investighează clasificarea imaginilor OCT pentru **Degenerescenț
 ## 🧩 Faza 2 – Clasificare cu segmentare explicită
 
 După clasificarea fără segmentare, proiectul a fost extins prin introducerea **segmentării explicite a imaginilor OCT**, urmată de **antrenarea modelelor de clasificare pe imaginile segmentate**.
+
+| Model  | CNV | DRUSEN | NORMAL |
+|--------|-----|--------|--------|
+| ORIGINAL  | <img width="220" alt="ORIGINAL CNV" src="https://github.com/user-attachments/assets/224dffe2-f76d-40dc-af2e-1804919e3d8c" /> | <img width="220" alt="ORIGINAL DRUSEN" src="https://github.com/user-attachments/assets/bdfa32cf-fa1b-49b3-86be-3415aeff0d84" /> | <img width="220" alt="ORIGINAL NORMAL" src="https://github.com/user-attachments/assets/674bc761-dbea-48f2-a01e-c3c64a13cca8" /> |
+| V1  | <img width="220" alt="V1 CNV" src="https://github.com/user-attachments/assets/0507229e-c233-482b-8f2c-4f5e494d507b" /> | <img width="220" alt="V1 DRUSEN" src="https://github.com/user-attachments/assets/6ff046e0-89a6-4bc9-b545-8e7cf004bd99" /> | <img width="220" alt="V1 NORMAL" src="https://github.com/user-attachments/assets/0e4f0650-336c-4e30-a843-716e6f6da962" /> |
+| V2  | <img width="220" alt="V2 CNV" src="https://github.com/user-attachments/assets/6574818c-5399-4999-8fa0-f1ec664fb980" /> | <img width="220" alt="V2 DRUSEN" src="https://github.com/user-attachments/assets/7ccc7952-4129-4ecd-ac5d-8288768106ae" /> | <img width="220" alt="V2 NORMAL" src="https://github.com/user-attachments/assets/caa41f7c-663b-43ed-8dc0-631b0751d0b3" /> |
+| OIMHS  | <img width="220" alt="OIMHS CNV" src="https://github.com/user-attachments/assets/17cc0e89-3491-4279-a67c-a4eaf7c8c7e5" /> | <img width="220" alt="OIMHS DRUSEN" src="https://github.com/user-attachments/assets/52fb03f6-2462-4664-922c-9e39da7f535a" /> | <img width="220" alt="OIMHS NORMAL" src="https://github.com/user-attachments/assets/dd312d80-1693-404b-9d6d-a9a3dbb427e7" /> |
+
+
 
 ---
 
@@ -134,7 +167,43 @@ După clasificarea fără segmentare, proiectul a fost extins prin introducerea 
   - Output: 3 clase (CNV, DRUSEN, NORMAL)  
   - Mixed Precision Training, Adam
 
+
 ---
+
+## 📊 Rezultate – Fără segmentare
+
+### 🔸 Set de test (Kermany2018)
+
+| Model | Acuratețe | CNV | DRUSEN | NORMAL |
+|------|----------|-----|--------|--------|
+| V1 | ~94.75% | 95% | 97% | 92% |
+| V2 | ~92.56% | 97% | 90% | 90% |
+| OIMHS | ~92.84% | 98% | 91% | 89% |
+
+
+| V1 | V2 | OIMHS |
+|----|----|-------|
+| <img width="320" height="220" alt="V1" src="https://github.com/user-attachments/assets/f89e2c97-fc78-493c-8881-4dfa4f05f235" /> | <img width="320" height="220" alt="V2" src="https://github.com/user-attachments/assets/cdf35def-14b9-4f35-addf-bbba795ec61f" /> | <img width="320" height="220" alt="OIMHS" src="https://github.com/user-attachments/assets/d7c9c91f-43b7-4657-92ba-35910b9ce300" /> |
+
+
+
+---
+
+### 🔸 Dataset extern
+
+| Model | Acuratețe | CNV | DRUSEN | NORMAL |
+|------|----------|-----|--------|--------|
+| V1 | ~66.11% | 64% | 55% | 76% |
+| V2 | ~65.97% | 69% | 35% | 87% |
+| OIMHS | ~62.46% | 88% | 57% | 45% |
+
+
+
+
+
+---
+
+
 
 ## 🏁 Concluzie generală
 
@@ -142,8 +211,36 @@ După clasificarea fără segmentare, proiectul a fost extins prin introducerea 
 - ResNet18 oferă cea mai bună performanță și generalizare
 - Pipeline-ul complet (segmentare + clasificare) simulează un flux clinic automat
 
+---
 
+## 💻 Interfață Streamlit pentru analiza OCT
 
+Am creat o interfață interactivă cu **Streamlit** care permite rularea rapidă a fluxurilor de segmentare și clasificare pe imaginile OCT, pentru a verifica ușor performanța modelelor și a vizualiza rezultatele.  
+
+### Funcționalități principale
+
+- **Selectarea fluxului de lucru:**  
+  - Tip 1 (V1) – segmentare manuală / preprocesare + clasificare  
+  - Tip 2 (V2) – segmentare manuală îmbunătățită + clasificare  
+  - Segmentare cu model direct – U-Net pentru mască + ResNet18 pentru clasificare  
+  - Model direct (.pth) – ResNet18 pe imagine brută  
+  - Model direct (.h5) – MobileNetV2 pe imagine brută cu preprocesare custom  
+
+- **Încărcare imagine:** utilizatorul poate încărca fișiere `.jpg`, `.png` sau `.jpeg`.
+
+- **Vizualizare rezultat:**  
+  - Imagine originală  
+  - Masca segmentată sau overlay-ul rezultatului segmentării  
+  - Diagnostic AI (clasă prezisă + scor de încredere)  
+  - Grafic cu probabilitățile fiecărei clase (pentru MobileNetV2)  
+
+- **Procesare și inferență:**  
+  - Fluxurile Tip 1 și Tip 2 folosesc funcții custom pentru segmentare și clasificare cu ResNet18  
+  - Fluxul “Segmentare cu model direct” rulează mai întâi U-Net pentru mască, apoi ResNet18 pentru clasificarea pe măști  
+  - Fluxurile “Model direct” clasifică imaginea brută cu ResNet18 (.pth) sau MobileNetV2 (.h5)  
+
+- **Rulare locală:**  
+  bash: python -m streamlit run app.py
 
 
 
