@@ -251,6 +251,13 @@ Am creat o interfață interactivă cu **Streamlit** care permite rularea rapid�
   bash: python -m streamlit run app.py
 
 
+---
+
+![PI_AFIȘ_AMD_page-0001 (1)](https://github.com/user-attachments/assets/5d8e35eb-9b21-401e-8f86-15a8d2588c3a)
+
+
+
+---
 
 
 ## Articole
