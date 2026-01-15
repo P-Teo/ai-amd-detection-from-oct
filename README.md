@@ -28,7 +28,8 @@ Acest proiect investighează clasificarea imaginilor OCT pentru **Degenerescenț
 
 ## 🔁 Fluxul proiectului
 
-<img width="3240" height="1630" alt="image" src="https://github.com/user-attachments/assets/92389eb9-7fa8-4e9a-b769-ddbf516dc06d" />
+![hhhhhhhhhhhhhhhhh1](https://github.com/user-attachments/assets/d0543de0-ec28-4e84-af20-d46564712bb5)
+
 
 
 
