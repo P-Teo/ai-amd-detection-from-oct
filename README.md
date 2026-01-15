@@ -68,7 +68,7 @@ Am creat o interfață interactivă cu **Streamlit** care permite rularea rapid�
 ## 🧪 Faza 1 – Clasificare fără segmentare
 **Antrenare directă pe imagini OCT brute**
 
----
+
 
 ## 🔹 Modele utilizate
 
@@ -77,14 +77,14 @@ Am creat o interfață interactivă cu **Streamlit** care permite rularea rapid�
 - **Arhitectură:** MobileNetV2 (ImageNet) + GlobalAveragePooling + Dense (4 clase (se elimină dme după), Softmax)
 - **Antrenare:** Adam, Sparse Categorical Crossentropy, 10 epoci
 
----
+
 
 ### Model 2 – ResNet18 (PyTorch)
 - **Preprocesare:** redimensionare 224×224, flip orizontal aleator, normalizare ImageNet
 - **Arhitectură:** ResNet18 (ImageNet) cu strat final adaptat la clase
 - **Antrenare:** SGD cu momentum, CrossEntropyLoss, 10 epoci
 
----
+
 
 ## 📊 Rezultate – Fără segmentare
 
@@ -102,7 +102,7 @@ Am creat o interfață interactivă cu **Streamlit** care permite rularea rapid�
 
 
 
----
+
 
 ### 🔸 Dataset extern
 
@@ -117,7 +117,7 @@ Am creat o interfață interactivă cu **Streamlit** care permite rularea rapid�
 | <img width="320" height="220" alt="MobileNetV2" src="https://github.com/user-attachments/assets/bbf689a6-c9af-4b85-a15f-189d447147a8" /> | <img width="320" height="220" alt="ResNet18" src="https://github.com/user-attachments/assets/41cf658d-bfbf-4ad1-91cd-71e1b99bcc94" /> |
 
 
----
+
 
 ## 🖋️ Concluzii – Fără segmentare
 
@@ -144,7 +144,7 @@ După clasificarea fără segmentare, proiectul a fost extins prin introducerea 
 
 
 
----
+
 
 ## 🔹 Tipuri de segmentare testate
 
@@ -153,14 +153,14 @@ După clasificarea fără segmentare, proiectul a fost extins prin introducerea 
 - Generare mască color (verde, roșu, albastru, roz)
 - Post-procesare: dilatări morfologice, Median Blur, Gaussian Blur
 
----
+
 
 ### 🟢 Tip 2 – Segmentare custom (V2 – îmbunătățită)
 - Umplere inteligentă între straturi
 - Extindere controlată a zonelor albastre și roz
 - Corectare artefacte și măști mai consistente structural
 
----
+
 
 ### 🟢 Tip 3 – Segmentare automată + clasificare
 
@@ -176,7 +176,7 @@ După clasificarea fără segmentare, proiectul a fost extins prin introducerea 
   - Mixed Precision Training, Adam
 
 
----
+
 
 ## 📊 Rezultate – Fără segmentare
 
@@ -195,7 +195,7 @@ După clasificarea fără segmentare, proiectul a fost extins prin introducerea 
 
 
 
----
+
 
 ### 🔸 Dataset extern
 
@@ -207,9 +207,6 @@ După clasificarea fără segmentare, proiectul a fost extins prin introducerea 
 
 
 
-
-
----
 
 
 
