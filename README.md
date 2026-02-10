@@ -290,4 +290,8 @@ Am creat o interfață interactivă cu **Streamlit** care permite rularea rapid�
 - Documentații Streamlit pentru interfața interactivă  
 - Coduri și exemple de procesare imagini medicale și vizualizare rezultate
 
+---
 
+## 🧾 *License*
+
+This project was created for **educational purposes**.  
