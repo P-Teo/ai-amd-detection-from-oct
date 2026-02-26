@@ -92,8 +92,8 @@ Am creat o interfață interactivă cu **Streamlit** care permite rularea rapid�
 
 | Model | Acuratețe | CNV | DRUSEN | NORMAL |
 |------|----------|-----|--------|--------|
-| MobileNetV2 | ~93.9% | 99% | 82% | 98% |
-| ResNet18 | ~98.7% | 100% | 96% | 100% |
+| MobileNetV2 | ~93.39% | 99% | 82% | 98% |
+| ResNet18 | ~99.45% | 100% | 96% | 100% |
 | Model GitHub | ~97.66% | 97% | 95% | 99% |
 
 | MobileNetV2 | ResNet18 |
@@ -108,8 +108,8 @@ Am creat o interfață interactivă cu **Streamlit** care permite rularea rapid�
 
 | Model | Acuratețe | CNV | DRUSEN | NORMAL |
 |------|----------|-----|--------|--------|
-| MobileNetV2 | ~58.46% | 76% | 11% | 96% |
-| ResNet18 | ~74.06% | 93% | 45% | 96% |
+| MobileNetV2 | ~67.27% | 76% | 11% | 96% |
+| ResNet18 | ~76.65% | 93% | 45% | 96% |
 | Model GitHub | ~43% | - | - | - |
 
 | MobileNetV2 | ResNet18 |
