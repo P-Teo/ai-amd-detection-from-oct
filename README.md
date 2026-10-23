@@ -1,5 +1,6 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/BzgEFjMi)
 
+Rezultatele obținute la unele experimente au fost recalculate și vor fi actualizate în versiunea revizuită, împreună cu tabelele, figurile și textul aferent. Recalcularea ține de ajustări ale setărilor de antrenare și evaluare, nu de erori majore, iar concluziile proiectului rămân neschimbate.
 # Clasificare AMD (Degenerescența Maculară Legată de Vârstă) 
 
 Acest proiect investighează clasificarea imaginilor OCT pentru **Degenerescența Maculară Legată de Vârstă (AMD)**, folosind **rețele neuronale convoluționale (CNN)**, atât **fără segmentare**, cât și **cu segmentare explicită** a structurilor retiniene.
